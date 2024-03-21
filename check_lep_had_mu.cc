@@ -1,0 +1,81 @@
+void check_lep_had_mu(){
+
+	TChain *t1 = new TChain("Sim");
+	int color[]={kBlack,kBlue,kGreen+2,kGreen-7,kAzure+6,kOrange};
+	//t1->Add("/home/xning/output/thre_track_leha_edep_nue_*GeV_1kevts.root");
+	t1->Add("/home/xning/output/thre_track_leha_edep_numu_*GeV_1kevts.root");
+	//t1->Add("/home/xning/output/thre_track_edep_nue_*GeV_1kevts.root");
+	//t1->Add("/home/xning/output/testfile.root");
+	double E_input = 3000;
+	TCanvas *c1 = new TCanvas("c1","c1",800,600);
+	//	TH1D *h1 = new TH1D("h1","",200,0,6000);
+	//	TH1D *h2 = new TH1D("h2","",200,0,6000);
+	//	TH1D *h3 = new TH1D("h3","",200,0,6000);
+	//	TH1D *h4 = new TH1D("h4","",200,0,6000);
+	//	TH1D *h5 = new TH1D("h5","",200,0,6000);
+	//	TH1D *h6 = new TH1D("h6","",200,0,6000);
+	//	t1->Draw("E_avail>>h1");
+	//	t1->Draw("E_depoTotal>>h2","","same");
+	//	t1->Draw("Q_depoTotal>>h3","","same");
+	//	t1->Draw("Q_depoTotal_thre>>h4","","same");
+	//	//t1->Draw("E_depoTotal_re>>h5","","same");
+	//	h1->SetLineColor(color[0]);
+	//	h2->SetLineColor(color[1]);
+	//	h3->SetLineColor(color[2]);
+	//	h4->SetLineColor(color[3]);
+	//	h5->SetLineColor(color[4]);
+	//	h6->SetLineColor(color[5]);
+
+	float E_avail[7]={0}, E_depoList[7]={0};
+	float Q_depoList[7]={0}, Q_depoList_thre[7]={0},E_depoList_re[7]={0},E_ly;
+	t1->SetBranchAddress("E_availList",E_avail);
+	t1->SetBranchAddress("E_depoList",E_depoList);
+	t1->SetBranchAddress("Q_depoList",Q_depoList);
+	t1->SetBranchAddress("Q_depoList_thre",Q_depoList_thre);
+	t1->SetBranchAddress("E_depoList_re",E_depoList_re);
+	t1->SetBranchAddress("E_depoTotal_l",&E_ly);
+	double total_entries = t1->GetEntries();
+	cout<<"total entries = "<<total_entries<<endl;
+	t1->GetEntry(5);
+	int i=0;
+	TCanvas *c2; 
+	double upper[]={10,3000,800,500,2500,10,2500};
+	//fill E_availList: 0 electron, 6 muon, 1 proton, 2 neutron, 3 pi+-, 4 pi0, 5 others.
+	c2 = new TCanvas("c2","c2",800,600);
+	TH2D *h_axis = new TH2D("h_re_1","",1,0,1.1,1,0,2000);
+	h_axis->Draw("");
+	h_axis->GetXaxis()->SetTitle("Ratio");
+	gStyle->SetOptStat(0);
+	TH1D* h_Q_lep = new TH1D("h_Q_lep","",100,0,1.1);
+	TH1D* h_Q_had = new TH1D("h_Q_had","",100,0,1.1);
+	h_Q_lep->SetLineColor(kBlue);
+	h_Q_had->SetLineColor(kGreen);
+//t1->Draw("(Q_depoList_thre[0]+Q_depoList_thre[6]+Q_depoList_thre[4])/(E_availList[0]+E_availList[6]+   E_availList[4])>>h_Q_lep","","same");
+//    t1->Draw("(Q_depoList_thre[1]+Q_depoList_thre[2]+Q_depoList_thre[3]+Q_depoList_thre[5])/               (E_availList[1]+E_availList[2]+E_availList[3]+E_availList[5])>>h_Q_had","","same");
+//	t1->Draw("(Q_depoList_thre[0])/(E_availList[0])>>h_Q_lep","","same");
+//	t1->Draw("(Q_depoList_thre[1]+Q_depoList_thre[2]+Q_depoList_thre[3]+Q_depoList_thre[4]+Q_depoList_thre[5])/(E_availList[1]+E_availList[2]+E_availList[3]+E_availList[4]+E_availList[5])>>h_Q_had","","same");
+//	t1->Draw("(E_depoList_re_lep[0]+E_depoList_re_lep[6])*0.66/(E_availList[0]+E_availList[6]-E_depoList_re_track[0]-E_depoList_re_track[6])>>h_Q_lep","","same");
+//	t1->Draw("(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[4]+E_depoList_re_had[5])*0.41/(E_availList[1]+E_availList[2]+E_availList[3]+E_availList[4]+E_availList[5]-E_depoList_re_track[1]-E_depoList_re_track[2]-E_depoList_re_track[3]-E_depoList_re_track[4]-E_depoList_re_track[5])>>h_Q_had","(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[4]+E_depoList_re_had[5])!=0","same");
+	t1->Draw("((E_depoList_re_lep[0])*0.66+E_depoList_re_had[4]*0.41)/(E_availList[0]+E_availList[4]-E_depoList_re_track[4]-E_depoList_re_track[0])>>h_Q_lep","(((E_depoList_re_lep[0])*0.66+E_depoList_re_had[4]*0.41)!=0)","same");
+//	t1->Draw("((E_depoList_re_lep[0]+E_depoList_re_lep[6])*0.66+E_depoList_re_lep[4]*0.41)/(E_availList[0]+E_availList[6]+E_availList[4]-E_depoList_re_track[4]-E_depoList_re_track[0]-E_depoList_re_track[6])>>h_Q_lep","","same");
+//	t1->Draw("(E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[5])*0.41/(E_availList[2]+E_availList[3]+E_availList[5]-E_depoList_re_track[2]-E_depoList_re_track[3]-E_depoList_re_track[5])>>h_Q_had","(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[5])!=0","same");
+	t1->Draw("(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[5])*0.41/(E_availList[1]+E_availList[2]+E_availList[3]+E_availList[5]-E_depoList_re_track[1]-E_depoList_re_track[2]-E_depoList_re_track[3]-E_depoList_re_track[5])>>h_Q_had","(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[5])!=0","same");
+//	t1->Draw("(E_depoList_re_lep[0]+E_depoList_re_lep[6])*0.66/(E_availList[0]+E_availList[6]-E_depoList_re_track[0]-E_depoList_re_track[6])>>h_Q_lep","","same");
+//	t1->Draw("(E_depoList_re_had[4])*0.41/(E_availList[4]-E_depoList_re_track[4])>>h_Q_had","(E_depoList_re_had[1]+E_depoList_re_had[2]+E_depoList_re_had[3]+E_depoList_re_had[4]+E_depoList_re_had[5])!=0","same");
+//	t1->Draw("(Q_depoList[0]+Q_depoList[6])/(E_availList[0]+E_availList[6])>>h_Q_lep","","same");
+//	t1->Draw("(Q_depoList[1]+Q_depoList[2]+Q_depoList[3]+Q_depoList[4]+Q_depoList[5])/(E_availList[1]+E_availList[2]+E_availList[3]+E_availList[4]+E_availList[5])>>h_Q_had","","same");
+//	t1->Draw("(Q_depoList[0]+Q_depoList[6])/(E_depoList[0]+E_depoList[6])>>h_Q_lep","","same");
+//	t1->Draw("(Q_depoList[1]+Q_depoList[2]+Q_depoList[3]+Q_depoList[4]+Q_depoList[5])/(E_depoList[1]+E_depoList[2]+E_depoList[3]+E_depoList[4]+E_depoList[5])>>h_Q_had","","same");
+	//cout<<h_Q_had->GetMean()<<"  "<<h_Q_lep->GetMean()<<endl;
+	double mean1,mean2,mean3,mean4;
+            double prob[]={0.5};
+            h_Q_had->GetQuantiles(1,&mean1,prob);
+            h_Q_lep->GetQuantiles(1,&mean2,prob);
+            cout<<"mean: "<<" "<<mean1<<"  "<<mean2<<endl;
+	cout<<h_Q_had->GetMean()<<"  "<<h_Q_lep->GetMean()<<endl;
+	int Bin = h_Q_had->GetMaximumBin();
+	double x = h_Q_had->GetXaxis()->GetBinCenter(Bin);
+	cout<<x<<endl;
+
+
+}
