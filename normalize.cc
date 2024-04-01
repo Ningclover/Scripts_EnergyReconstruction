@@ -28,7 +28,7 @@ h_matrix[2] = (TH2D*)fmatrix->Get("h_re_3");
 h_matrix[3] = (TH2D*)fmatrix->Get("h_re_4");
 h_matrix[4] = (TH2D*)fmatrix->Get("h_ly");
 
-vector<vector<double>> normalized_vec(98,vector<double>(80,0));
+vector<vector<double>> normalized_vec(99,vector<double>(80,0));
 normal(h_matrix[2],normalized_vec);
 
 ofstream outfile;
@@ -36,13 +36,20 @@ outfile.open("smear_matrix.dat");
 outfile<<"energy(#app_nue_sig)<"<<endl;
 outfile<<"@energy="<<endl;
 for(int j=0;j<80;j++){
-outfile<<"{0,	98,	0";
-for(int i=0;i<98;i++){
+outfile<<"{0,	98	";
+//outfile<<"0	98	";
+for(int i=0;i<99;i++){
 outfile<<", "<<normalized_vec[i][j]<<"\t";
+//outfile<<" "<<normalized_vec[i][j]<<"\t";
 }
+if(i<98)
 outfile<<"}:"<<endl;
+else
+outfile<<"};"<<endl;
+//outfile<<endl;
 
 }
+outfile<<">";
 outfile.close();
 
 }
