@@ -143,6 +143,8 @@ leg2->AddEntry(g1[4], "Light", "l");
 leg2->Draw();
 
 //	double chi2_try = chi2(h_spec_smear[0][0],h_spec_smear[4][0]);
+
+
 //	 cout<<chi2_try<<endl;
 
 	
