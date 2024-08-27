@@ -1,6 +1,8 @@
-These are the scripts for study of neutrino energy reconstruction.
+These are the plot scripts for study of GeV neutrino energy reconstruction.
 
-For the smear matrix:
+The folder *plot* contains all the plots for paper.
+
+For the smear matrix, in folder *dat*:
 
 nue_sig_0.txt: for Method 1, pure calorimetry 
 
