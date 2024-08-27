@@ -4,8 +4,8 @@
 void resolution()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Mon Aug 26 16:51:57 2024) by ROOT version 6.28/06
-   TCanvas *c1 = new TCanvas("c1", "c1",96,105,800,600);
+//=========  (Tue Aug 27 10:01:49 2024) by ROOT version 6.28/06
+   TCanvas *c1 = new TCanvas("c1", "c1",76,85,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
    c1->Range(-1.15,-4.324324,6.35,22.7027);
@@ -191,47 +191,6 @@ void resolution()
    
    graph->Draw(" l");
    
-   Double_t Graph4_fx5[10] = { 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 };
-   Double_t Graph4_fy5[10] = { 7.716397, 5.969188, 5.614737, 5.343952, 5.040538, 5.010074, 4.853237, 4.884409, 4.765507, 4.408093 };
-   graph = new TGraph(10,Graph4_fx5,Graph4_fy5);
-   graph->SetName("Graph4");
-   graph->SetTitle("Graph");
-   graph->SetFillStyle(1000);
-   graph->SetLineColor(6);
-   graph->SetLineWidth(2);
-   graph->SetMarkerStyle(20);
-   graph->SetMarkerSize(0.6);
-   
-   TH1F *Graph_Graph45 = new TH1F("Graph_Graph45","Graph",100,0.05,5.45);
-   Graph_Graph45->SetMinimum(4.077262);
-   Graph_Graph45->SetMaximum(8.047228);
-   Graph_Graph45->SetDirectory(nullptr);
-   Graph_Graph45->SetStats(0);
-
-   ci = TColor::GetColor("#000099");
-   Graph_Graph45->SetLineColor(ci);
-   Graph_Graph45->SetLineWidth(2);
-   Graph_Graph45->SetMarkerStyle(20);
-   Graph_Graph45->SetMarkerSize(0.6);
-   Graph_Graph45->GetXaxis()->SetLabelFont(132);
-   Graph_Graph45->GetXaxis()->SetLabelSize(0.06);
-   Graph_Graph45->GetXaxis()->SetTitleSize(0.06);
-   Graph_Graph45->GetXaxis()->SetTitleOffset(1.1);
-   Graph_Graph45->GetXaxis()->SetTitleFont(132);
-   Graph_Graph45->GetYaxis()->SetLabelFont(132);
-   Graph_Graph45->GetYaxis()->SetLabelSize(0.06);
-   Graph_Graph45->GetYaxis()->SetTitleSize(0.06);
-   Graph_Graph45->GetYaxis()->SetTitleOffset(1.2);
-   Graph_Graph45->GetYaxis()->SetTitleFont(132);
-   Graph_Graph45->GetZaxis()->SetLabelFont(132);
-   Graph_Graph45->GetZaxis()->SetLabelSize(0.06);
-   Graph_Graph45->GetZaxis()->SetTitleSize(0.06);
-   Graph_Graph45->GetZaxis()->SetTitleOffset(1);
-   Graph_Graph45->GetZaxis()->SetTitleFont(132);
-   graph->SetHistogram(Graph_Graph45);
-   
-   graph->Draw(" l");
-   
    TLegend *leg = new TLegend(0.6,0.7,0.87,0.87,NULL,"brNDC");
    leg->SetBorderSize(0);
    leg->SetTextFont(132);
@@ -260,14 +219,6 @@ void resolution()
    entry->SetTextFont(132);
    entry=leg->AddEntry("Graph0","Q3","l");
    entry->SetLineColor(4);
-   entry->SetLineStyle(1);
-   entry->SetLineWidth(2);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
-   entry=leg->AddEntry("Graph4","Q4","l");
-   entry->SetLineColor(6);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);

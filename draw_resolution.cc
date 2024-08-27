@@ -178,7 +178,7 @@ void draw_resolution(){
 	g4->Draw("same l");
 	g5->SetLineWidth(2);
 	g5->SetLineColor(color[4]);
-	g5->Draw("same l");
+	//g5->Draw("same l");
 	g6->SetLineWidth(2);
 	g6->SetLineColor(kViolet-2);
 	//g6->Draw("same l");
@@ -189,7 +189,7 @@ void draw_resolution(){
 	leg->AddEntry(g2, "Q1", "l");
 	leg->AddEntry(g3, "Q2", "l");
 	leg->AddEntry(g1, "Q3", "l");
-	leg->AddEntry(g5, "Q4", "l");
+	//leg->AddEntry(g5, "Q4", "l");
 	leg->AddEntry(g4, "L1", "l");
 	leg->Draw();
 	c1->SaveAs("plot/resolution.pdf");
