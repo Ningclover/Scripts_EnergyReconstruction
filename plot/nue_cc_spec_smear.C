@@ -4,7 +4,7 @@
 void nue_cc_spec_smear()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Tue Aug 27 14:49:45 2024) by ROOT version 6.28/06
+//=========  (Tue Aug 27 15:16:38 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",10,64,700,500);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);

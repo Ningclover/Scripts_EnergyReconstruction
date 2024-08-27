@@ -66,7 +66,7 @@ void smear_dune_flux(){
 	const int NN=sizeof(delta)/sizeof(delta[0]);
 	double delta_degree[NN] = {0};
 
-	TFile *fmatrix = new TFile("RespondsMatrix_nue.root","read");
+	TFile *fmatrix = new TFile("dat/RespondsMatrix_nue.root","read");
 
 	TH2D *h_matrix[5];
 	h_matrix[0] = (TH2D*)fmatrix->Get("h_6");
@@ -76,8 +76,8 @@ void smear_dune_flux(){
 	h_matrix[4] = (TH2D*)fmatrix->Get("h_ly");
 	int color[5] ={ kOrange, kGreen, kRed,kBlack ,kBlue}; 
 
-	TFile *fspec = new TFile("dune_flux_2.root","read");
-	TFile *fspec_inv = new TFile("dune_flux_inverse.root","read");
+	TFile *fspec = new TFile("dat/dune_flux_2.root","read");
+	TFile *fspec_inv = new TFile("dat/dune_flux_inverse.root","read");
 	TH1D *h_spec[NN];
 	TH1D *h_spec_inv[NN];
 	TH1D *h_spec_smear[NN][5];
