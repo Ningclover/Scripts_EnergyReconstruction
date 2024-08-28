@@ -4,7 +4,7 @@
 void RL_Efield()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Mon Aug 26 12:48:20 2024) by ROOT version 6.28/06
+//=========  (Wed Aug 28 14:08:37 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -32,12 +32,15 @@ void RL_Efield()
    h1__1->SetLineWidth(2);
    h1__1->SetMarkerStyle(20);
    h1__1->SetMarkerSize(0.6);
-   h1__1->GetXaxis()->SetTitle("E field[kV/cm]");
+   h1__1->GetXaxis()->SetTitle("Drift E field[kV/cm]");
+   h1__1->GetXaxis()->CenterTitle(true);
    h1__1->GetXaxis()->SetLabelFont(132);
    h1__1->GetXaxis()->SetLabelSize(0.06);
    h1__1->GetXaxis()->SetTitleSize(0.06);
    h1__1->GetXaxis()->SetTitleOffset(1.1);
    h1__1->GetXaxis()->SetTitleFont(132);
+   h1__1->GetYaxis()->SetTitle("R_{L}");
+   h1__1->GetYaxis()->CenterTitle(true);
    h1__1->GetYaxis()->SetLabelFont(132);
    h1__1->GetYaxis()->SetLabelSize(0.06);
    h1__1->GetYaxis()->SetTitleSize(0.06);
@@ -117,7 +120,7 @@ void RL_Efield()
    
    TLegend *leg = new TLegend(0.6,0.65,0.85,0.89,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextFont(132);
+   leg->SetTextFont(133);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -130,7 +133,7 @@ void RL_Efield()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("hh2","2 MIP","l");
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
@@ -138,7 +141,7 @@ void RL_Efield()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("hh3","3 MIP","l");
    entry->SetLineColor(4);
    entry->SetLineStyle(1);
@@ -146,7 +149,7 @@ void RL_Efield()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    leg->Draw();
    c1->Modified();
    c1->cd();

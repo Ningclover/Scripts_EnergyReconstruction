@@ -19,7 +19,7 @@ void normal(TH2D* hmatrix, vector<vector<double>> &result){
 
 
 void normalize(){
-TFile *fmatrix = new TFile("RespondsMatrix.root","read");
+TFile *fmatrix = new TFile("dat/RespondsMatrix_nue.root","read");
 
 TH2D *h_matrix[5];
 h_matrix[0] = (TH2D*)fmatrix->Get("h_6");

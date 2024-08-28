@@ -102,8 +102,10 @@ void smear_dune_flux(){
 	h_spec_smear[0][0]->Draw("hist");
 	h_spec_smear[0][0]->GetXaxis()->SetRangeUser(0,6000);
 	h_spec_smear[0][0]->GetXaxis()->SetTitle("Energy[MeV]");
+	h_spec_smear[0][0]->GetXaxis()->CenterTitle();
 	h_spec_smear[0][0]->GetYaxis()->SetRangeUser(0,50);
 	h_spec_smear[0][0]->GetYaxis()->SetTitle("#nu_{e}CC Events / (40 kTon #upoint y #upoint 1.2 MW)");
+	h_spec_smear[0][0]->GetYaxis()->CenterTitle();
 	h_spec_smear[0][0]->GetYaxis()->SetTitleOffset(1);
 	h_spec_smear[0][0]->GetYaxis()->CenterTitle();
 	h_spec_smear[1][0]->Draw("same hist");
@@ -129,9 +131,11 @@ void smear_dune_flux(){
 	TH1D *h2 = flux2MeV(h_spec[2]);
 	h0->Draw("hist");
 	h0->GetXaxis()->SetRangeUser(0,6000);
-	h0->GetXaxis()->SetTitle("Energy[GeV]");
+	h0->GetXaxis()->SetTitle("Energy[MeV]");
+	h0->GetXaxis()->CenterTitle();
 	h0->GetYaxis()->SetRangeUser(0,50);
 	h0->GetYaxis()->SetTitle("#nu_{e}CC Events / (40 kTon #upoint y #upoint 1.2 MW)");
+	h0->GetYaxis()->CenterTitle();
 	h0->GetYaxis()->SetTitleOffset(1);
 	h0->GetYaxis()->CenterTitle();
 	h1->Draw("same hist");

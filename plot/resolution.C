@@ -4,7 +4,7 @@
 void resolution()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Tue Aug 27 10:01:49 2024) by ROOT version 6.28/06
+//=========  (Wed Aug 28 14:42:35 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",76,85,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -47,12 +47,14 @@ void resolution()
    Graph_Graph01->SetMarkerStyle(20);
    Graph_Graph01->SetMarkerSize(0.6);
    Graph_Graph01->GetXaxis()->SetTitle("Energy [GeV]");
+   Graph_Graph01->GetXaxis()->CenterTitle(true);
    Graph_Graph01->GetXaxis()->SetLabelFont(132);
    Graph_Graph01->GetXaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleOffset(1.1);
    Graph_Graph01->GetXaxis()->SetTitleFont(132);
    Graph_Graph01->GetYaxis()->SetTitle("Resolution [%]");
+   Graph_Graph01->GetYaxis()->CenterTitle(true);
    Graph_Graph01->GetYaxis()->SetLabelFont(132);
    Graph_Graph01->GetYaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetYaxis()->SetTitleSize(0.06);
@@ -193,7 +195,7 @@ void resolution()
    
    TLegend *leg = new TLegend(0.6,0.7,0.87,0.87,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextFont(132);
+   leg->SetTextFont(133);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -206,7 +208,7 @@ void resolution()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("Graph1","Q2","l");
 
    ci = TColor::GetColor("#009900");
@@ -216,7 +218,7 @@ void resolution()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("Graph0","Q3","l");
    entry->SetLineColor(4);
    entry->SetLineStyle(1);
@@ -224,7 +226,7 @@ void resolution()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("Graph3","L1","l");
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
@@ -232,7 +234,7 @@ void resolution()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    leg->Draw();
    c1->Modified();
    c1->cd();

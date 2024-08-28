@@ -4,8 +4,8 @@
 void lep_had_LQ()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Mon Aug 26 12:51:55 2024) by ROOT version 6.28/06
-   TCanvas *c1 = new TCanvas("c1", "c1",10,64,700,500);
+//=========  (Wed Aug 28 15:52:31 2024) by ROOT version 6.28/06
+   TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
    c1->Range(0,0,1,1);
@@ -48,11 +48,12 @@ void lep_had_LQ()
    h_re_1__1->SetLineWidth(2);
    h_re_1__1->SetMarkerStyle(20);
    h_re_1__1->SetMarkerSize(0.6);
-   h_re_1__1->GetXaxis()->SetTitle("Ratio");
+   h_re_1__1->GetXaxis()->SetTitle("Calorimeters response");
+   h_re_1__1->GetXaxis()->CenterTitle(true);
    h_re_1__1->GetXaxis()->SetLabelFont(132);
    h_re_1__1->GetXaxis()->SetLabelSize(0.08);
-   h_re_1__1->GetXaxis()->SetTitleSize(0.08);
-   h_re_1__1->GetXaxis()->SetTitleOffset(0.8);
+   h_re_1__1->GetXaxis()->SetTitleSize(0.1);
+   h_re_1__1->GetXaxis()->SetTitleOffset(0.9);
    h_re_1__1->GetXaxis()->SetTitleFont(132);
    h_re_1__1->GetYaxis()->SetNdivisions(505);
    h_re_1__1->GetYaxis()->SetLabelFont(132);
@@ -297,7 +298,7 @@ void lep_had_LQ()
    h_Q_had__3->GetZaxis()->SetTitleOffset(1);
    h_Q_had__3->GetZaxis()->SetTitleFont(132);
    h_Q_had__3->Draw("same hist");
-   TLatex *   tex = new TLatex(0.1,0.4,"Charge");
+   TLatex *   tex = new TLatex(0.1,0.8,"Charge");
    tex->SetTextFont(132);
    tex->SetTextSize(0.1);
    tex->SetLineWidth(2);
@@ -331,11 +332,12 @@ void lep_had_LQ()
    h_re_1__4->SetLineWidth(2);
    h_re_1__4->SetMarkerStyle(20);
    h_re_1__4->SetMarkerSize(0.6);
-   h_re_1__4->GetXaxis()->SetTitle("Ratio");
+   h_re_1__4->GetXaxis()->SetTitle("Calorimeters response");
+   h_re_1__4->GetXaxis()->CenterTitle(true);
    h_re_1__4->GetXaxis()->SetLabelFont(132);
    h_re_1__4->GetXaxis()->SetLabelSize(0.08);
-   h_re_1__4->GetXaxis()->SetTitleSize(0.08);
-   h_re_1__4->GetXaxis()->SetTitleOffset(0.8);
+   h_re_1__4->GetXaxis()->SetTitleSize(0.1);
+   h_re_1__4->GetXaxis()->SetTitleOffset(0.9);
    h_re_1__4->GetXaxis()->SetTitleFont(132);
    h_re_1__4->GetYaxis()->SetNdivisions(505);
    h_re_1__4->GetYaxis()->SetLabelFont(132);
@@ -588,38 +590,60 @@ void lep_had_LQ()
    h_L_had__6->GetZaxis()->SetTitleOffset(1);
    h_L_had__6->GetZaxis()->SetTitleFont(132);
    h_L_had__6->Draw("same hist");
-      tex = new TLatex(0.1,0.4,"Light");
+      tex = new TLatex(0.1,0.8,"Light");
    tex->SetTextFont(132);
    tex->SetTextSize(0.1);
    tex->SetLineWidth(2);
    tex->Draw();
    
-   TLegend *leg = new TLegend(0.6,0.6,0.85,0.8,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.7,0.3,0.85,0.7,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextFont(132);
+   leg->SetTextFont(133);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
-   TLegendEntry *entry=leg->AddEntry("h_Q_lep","Electron","l");
+   TLegendEntry *entry=leg->AddEntry("h_Q_lep","e","l");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
-   entry=leg->AddEntry("h_Q_had","Hadron","l");
+   entry->SetTextFont(133);
+   entry=leg->AddEntry("h_Q_had","h","l");
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    leg->Draw();
    pad2->Modified();
+   c1->cd();
+  
+// ------------>Primitives in pad: pad3
+   TPad *pad3 = new TPad("pad3", "pad3",0,0,0.1,1);
+   pad3->Draw();
+   pad3->cd();
+   pad3->Range(0,0,1,1);
+   pad3->SetFillColor(0);
+   pad3->SetBorderMode(0);
+   pad3->SetBorderSize(2);
+   pad3->SetTickx(1);
+   pad3->SetTicky(1);
+   pad3->SetLeftMargin(0.16);
+   pad3->SetRightMargin(0.12);
+   pad3->SetBottomMargin(0.16);
+   pad3->SetFrameBorderMode(0);
+   TText *text = new TText(0.8,0.4,"Probability");
+   text->SetTextFont(133);
+   text->SetTextSize(30);
+   text->SetTextAngle(90);
+   text->Draw();
+   pad3->Modified();
    c1->cd();
    c1->Modified();
    c1->cd();

@@ -4,7 +4,7 @@
 void nue_cc_spec()
 {
 //=========Macro generated from canvas: c2/c2
-//=========  (Tue Aug 27 15:16:39 2024) by ROOT version 6.28/06
+//=========  (Wed Aug 28 14:47:46 2024) by ROOT version 6.28/06
    TCanvas *c2 = new TCanvas("c2", "c2",10,64,700,500);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -80,8 +80,9 @@ void nue_cc_spec()
    hOsc_1dO57MeV__4->SetLineWidth(2);
    hOsc_1dO57MeV__4->SetMarkerStyle(20);
    hOsc_1dO57MeV__4->SetMarkerSize(0.6);
-   hOsc_1dO57MeV__4->GetXaxis()->SetTitle("Energy[GeV]");
+   hOsc_1dO57MeV__4->GetXaxis()->SetTitle("Energy[MeV]");
    hOsc_1dO57MeV__4->GetXaxis()->SetRange(1,48);
+   hOsc_1dO57MeV__4->GetXaxis()->CenterTitle(true);
    hOsc_1dO57MeV__4->GetXaxis()->SetLabelFont(132);
    hOsc_1dO57MeV__4->GetXaxis()->SetLabelSize(0.06);
    hOsc_1dO57MeV__4->GetXaxis()->SetTitleSize(0.06);
@@ -248,7 +249,7 @@ void nue_cc_spec()
    
    TLegend *leg = new TLegend(0.65,0.6,0.87,0.87,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextFont(132);
+   leg->SetTextFont(133);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -261,7 +262,7 @@ void nue_cc_spec()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("hOsc_0.00h_6"," #delta=0","l");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
@@ -269,7 +270,7 @@ void nue_cc_spec()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    entry=leg->AddEntry("hOsc_-1.57h_6"," #delta=-#pi/2","l");
    entry->SetLineColor(4);
    entry->SetLineStyle(1);
@@ -277,7 +278,7 @@ void nue_cc_spec()
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
-   entry->SetTextFont(132);
+   entry->SetTextFont(133);
    leg->Draw();
    c2->Modified();
    c2->cd();

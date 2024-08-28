@@ -15,6 +15,8 @@ void check_lep_had_RD(){
 	TH2D *h_axis = new TH2D("h_re_1","",1,0.3,1,1,0,1);
 	h_axis->GetXaxis()->SetTitle("#bar{R}_{dep}");
 	h_axis->GetYaxis()->SetTitle("#bar{#beta R_{C}} or #bar{R_{L}}");
+	h_axis->GetXaxis()->CenterTitle();
+	h_axis->GetYaxis()->CenterTitle();
 	h_axis->GetXaxis()->SetTitleSize(0.05);
 	h_axis->GetYaxis()->SetTitleSize(0.05);
 	gStyle->SetOptStat(0);
@@ -78,10 +80,11 @@ void check_lep_had_RD(){
 	f3->Draw("same");
 
 	TLatex text;
-	text.SetTextSize(0.03);
-	text.DrawLatex(0.36,0.78,"R_{cal}=0.35");
-	text.DrawLatex(0.42,0.92,"R_{cal}=0.42");
-	text.DrawLatex(0.56,0.93,"R_{cal}=0.5");
+	text.SetTextFont(133);
+	text.SetTextSize(25);
+	text.DrawLatex(0.36,0.78,"xy=0.35");
+	text.DrawLatex(0.42,0.92,"xy=0.42");
+	text.DrawLatex(0.56,0.93,"xy=0.5");
 
 
 	TFile *file = new TFile("lep_had_RD_plot.root","recreate");
@@ -92,13 +95,18 @@ void check_lep_had_RD(){
 
 	file->Close();
 
-	TLegend *leg3 = new TLegend(0.6,0.72, 0.85,0.88);
+	//TLegend *leg3 = new TLegend(0.55,0.72, 0.85,0.88);
+	TLegend *leg3 = new TLegend(0.18,0.18, 0.85,0.24);
 	//leg3->SetBorderSize(0);
-	leg3->SetNColumns(2);
-	leg3->AddEntry(h_Q_lep, "#beta R_{C};Electron", "P");
-	leg3->AddEntry(h_Q_had, "#beta R_{C};Hadron", "p");
-	leg3->AddEntry(h_L_lep, "R_{L};Electron", "P");
-	leg3->AddEntry(h_L_had, "R_{L};Hadron", "p");
+	leg3->SetNColumns(4);
+	auto entry = leg3->AddEntry(h_Q_lep, "Charge; e", "P");
+	entry->SetTextSize(28);	
+	entry = leg3->AddEntry(h_Q_had, "Charge; h", "P");
+	entry->SetTextSize(28);	
+	entry = leg3->AddEntry(h_L_lep, "Light; e", "P");
+	entry->SetTextSize(28);	
+	entry = leg3->AddEntry(h_L_had, "Light; h", "P");
+	entry->SetTextSize(28);	
 	leg3->Draw();
 
 

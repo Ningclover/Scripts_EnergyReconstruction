@@ -39,7 +39,7 @@ void rootlogon()
   gStyle->SetTitleFont(font,"y");
   gStyle->SetLabelFont(font,"z");
   gStyle->SetTitleFont(font,"z");
-  gStyle->SetLegendFont(font);
+  //gStyle->SetLegendFont(font);
   
   gStyle->SetLabelSize(tsize,"x");
   gStyle->SetTitleSize(tsize,"x");
@@ -47,7 +47,9 @@ void rootlogon()
   gStyle->SetTitleSize(tsize,"y");
   gStyle->SetLabelSize(tsize,"z");
   gStyle->SetTitleSize(tsize,"z");
- 
+
+  gStyle->SetLegendTextSize(32);
+  gStyle->SetLegendFont(133); 
 
   // use bold lines and markers
   gStyle->SetMarkerStyle(20);

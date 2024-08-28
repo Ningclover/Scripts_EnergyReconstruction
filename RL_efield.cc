@@ -3,7 +3,10 @@ TCanvas *c1 = new TCanvas("c1","c1",800,600);
 gPad->SetGrid();
 TH2D *h1 = new TH2D("h1","h1",1,0,2,1,0.3,0.9);
 h1->Draw("axis");
-h1->GetXaxis()->SetTitle("E field[kV/cm]");
+h1->GetXaxis()->SetTitle("Drift E field[kV/cm]");
+h1->GetYaxis()->SetTitle("R_{L}");
+h1->GetXaxis()->CenterTitle();
+h1->GetYaxis()->CenterTitle();
 
 TH1D *hh1 = new TH1D("hh1","",1,1,1);
 hh1->SetLineColor(1);

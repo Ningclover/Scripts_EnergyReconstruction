@@ -1,5 +1,5 @@
 void Draw_lep_had_LQ(){
-TCanvas *c1 = new TCanvas("c1","c1",1);
+TCanvas *c1 = new TCanvas("c1","c1",800,600);
 TPad *pad1 = new TPad("pad1","pad1",0,0,1,0.5);
 pad1->SetGrid();
 pad1->SetTopMargin(0);
@@ -13,9 +13,10 @@ int ndiv = 505;
     TH2D *h_axis = new TH2D("h_re_1","",1,0,1.1,1,0,1);
     h_axis->Draw("");
 	h_axis->GetYaxis()->SetNdivisions(ndiv);
-    h_axis->GetXaxis()->SetTitle("Ratio");
-    h_axis->GetXaxis()->SetTitleOffset(0.8);
-    h_axis->GetXaxis()->SetTitleSize(0.08);
+    h_axis->GetXaxis()->SetTitle("Calorimeters response");
+	h_axis->GetXaxis()->CenterTitle();
+    h_axis->GetXaxis()->SetTitleOffset(0.9);
+    h_axis->GetXaxis()->SetTitleSize(0.1);
     h_axis->GetXaxis()->SetLabelSize(0.08);
     h_axis->GetYaxis()->SetLabelSize(0.08);
 //    h_axis->GetXaxis()->SetTitleSize(0.06);
@@ -41,7 +42,7 @@ t1->Add("/data2/users/xning/output/thre_track_leha_edep_nue_*GeV_1kevts.root");
 	h_Q_had->Scale(1./h_Q_had->Integral());
 	TLatex text;
 	text.SetTextSize(0.1);
-	text.DrawLatex(0.1,0.4,"Charge");
+	text.DrawLatex(0.1,0.8,"Charge");
 
 
 c1->cd();
@@ -59,14 +60,25 @@ pad2->cd();
     t1->Draw("(E_depoList_l[1]+E_depoList_l[2]+E_depoList_l[3]+E_depoList_l[5])/(E_availList[1]+        E_availList[2]+E_availList[3]+E_availList[5])>>h_L_had","","same hist");
 	h_L_lep->Scale(1./h_L_lep->Integral());
 	h_L_had->Scale(1./h_L_had->Integral());
-	text.DrawLatex(0.1,0.4,"Light");
+	text.DrawLatex(0.1,0.8,"Light");
 
 
-	TLegend *leg3 = new TLegend(0.6,0.60, 0.85,0.8);
+	TLegend *leg3 = new TLegend(0.7,0.30, 0.85,0.7);
     leg3->SetBorderSize(0);
-    leg3->AddEntry(h_Q_lep, "Electron", "l");
-    leg3->AddEntry(h_Q_had, "Hadron", "l");
+    leg3->AddEntry(h_Q_lep, "e", "l");
+    leg3->AddEntry(h_Q_had, "h", "l");
     leg3->Draw();
+
+c1->cd();
+TPad *pad3 = new TPad("pad3","pad3",0,0,0.1,1);
+pad3->Draw();
+pad3->cd();
+auto *tt = new TText(0.8,0.4,"Probability");
+tt->SetTextFont(133);
+tt->SetTextSize(30);
+tt->SetTextAngle(90);
+tt->Draw();
+
 	c1->SaveAs("plot/lep_had_LQ.pdf");
 	c1->SaveAs("plot/lep_had_LQ.C");
 

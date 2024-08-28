@@ -4,7 +4,7 @@
 void E_H_Efield()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Mon Aug 26 13:02:27 2024) by ROOT version 6.28/06
+//=========  (Wed Aug 28 14:12:03 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -29,6 +29,7 @@ void E_H_Efield()
    graph->SetTitle("Graph");
    graph->SetFillStyle(1000);
    graph->SetLineColor(2);
+   graph->SetLineWidth(2);
    graph->SetMarkerStyle(20);
    graph->SetMarkerSize(0.6);
    
@@ -45,14 +46,16 @@ void E_H_Efield()
    Graph_Graph01->SetLineWidth(2);
    Graph_Graph01->SetMarkerStyle(20);
    Graph_Graph01->SetMarkerSize(0.6);
-   Graph_Graph01->GetXaxis()->SetTitle("E field[kV/cm]");
+   Graph_Graph01->GetXaxis()->SetTitle("Drift E field[kV/cm]");
    Graph_Graph01->GetXaxis()->SetRange(1,73);
+   Graph_Graph01->GetXaxis()->CenterTitle(true);
    Graph_Graph01->GetXaxis()->SetLabelFont(132);
    Graph_Graph01->GetXaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleOffset(1.1);
    Graph_Graph01->GetXaxis()->SetTitleFont(132);
    Graph_Graph01->GetYaxis()->SetTitle("e/h");
+   Graph_Graph01->GetYaxis()->CenterTitle(true);
    Graph_Graph01->GetYaxis()->SetLabelFont(132);
    Graph_Graph01->GetYaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetYaxis()->SetTitleSize(0.06);

@@ -164,6 +164,8 @@ void draw_resolution(){
 	g1->Draw("AL");
 	g1->GetXaxis()->SetTitle("Energy [GeV]");
 	g1->GetYaxis()->SetTitle("Resolution [%]");
+	g1->GetXaxis()->CenterTitle();
+	g1->GetYaxis()->CenterTitle();
 	g1->SetLineWidth(2);
 	g2->SetLineWidth(2);
 	g3->SetLineWidth(2);

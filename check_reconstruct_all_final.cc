@@ -19,30 +19,32 @@ void check_reconstruct_all_final(){
 	cout<<t1->GetEntries()<<endl;
 	TCanvas *c1 = new TCanvas("c1","c1",800,600);
 	gPad->SetGrid();
-	TH1D *h1 = new TH1D("h1","",200,0,6000);
-	TH1D *h2 = new TH1D("h2","",200,0,6000);
-	TH1D *h3 = new TH1D("h3","",200,0,6000);
-	TH1D *h4 = new TH1D("h4","",200,0,6000);
-	TH1D *h5 = new TH1D("h5","",200,0,6000);
+	TH1D *h1 = new TH1D("h1","",400,0,6000);
+	TH1D *h2 = new TH1D("h2","",400,0,6000);
+	TH1D *h3 = new TH1D("h3","",400,0,6000);
+	TH1D *h4 = new TH1D("h4","",400,0,6000);
+	TH1D *h5 = new TH1D("h5","",400,0,6000);
 	t1->Draw("E_avail>>h1");
 	t1->Draw("E_depoTotal>>h2","","same");
 	t1->Draw("Q_depoTotal*0.83>>h3","","same");
-	//t1->Draw("Q_depoTotal_thre*0.83>>h4","","same");
+	t1->Draw("Q_depoTotal_thre*0.83>>h4","","same");
 	t1->Draw("E_depoTotal_l>>h5","","same");
 	h1->GetXaxis()->SetTitle("Energy[MeV]");
+	h1->GetXaxis()->CenterTitle();
 	h1->SetLineColor(color2[0]);
 	h2->SetLineColor(color2[1]);
 	h3->SetLineColor(color2[2]);
-	h4->SetLineColor(color2[4]);
+	h4->SetLineColor(color2[2]);
+	h4->SetLineStyle(7);
 	h5->SetLineColor(color2[3]);
-	TLegend *leg2 = new TLegend(0.2,0.7, 0.64,0.87);
+	TLegend *leg2 = new TLegend(0.2,0.65, 0.6,0.87);
 	leg2->SetNColumns(2);
 	leg2->SetBorderSize(0);
-	leg2->AddEntry(h1, "Available energy", "l");
-	leg2->AddEntry(h2, "Deposit energy", "l");
-	leg2->AddEntry(h3, "Deposit charge", "l");
-	//	leg2->AddEntry(h4, "Deposit charge detected", "l");
-	leg2->AddEntry(h5, "Deposit light detected", "l");
+	leg2->AddEntry(h1, "E_{avail}", "l");
+	leg2->AddEntry(h2, "E_{dep}", "l");
+	leg2->AddEntry(h3, "Q", "l");
+	leg2->AddEntry(h4, "Q_{thre}", "l");
+	leg2->AddEntry(h5, "L", "l");
 	leg2->Draw();
 	if(energy==1)
 		h1->GetXaxis()->SetRangeUser(0,1400);
@@ -69,12 +71,12 @@ void check_reconstruct_all_final(){
 	double total_entries = t1->GetEntries();
 
 	TCanvas *c3 = new TCanvas("c3","c3",800,600);
-	TH1D *h_Q4 = new TH1D("h_Q4","",200,0,6000);
-	TH1D *h_Q3 = new TH1D("h_Q3","",200,0,6000);
-	TH1D *h_Q2 = new TH1D("h_Q2","",200,0,6000);
-	TH1D *h_L1 = new TH1D("h_L1","",200,0,6000);
-	TH1D *h_ly_tmp = new TH1D("h_ly_tmp","",200,0,6000);
-	TH1D *h_Q1 = new TH1D("h_Q1","",200,0,6000);
+	TH1D *h_Q4 = new TH1D("h_Q4","",400,0,6000);
+	TH1D *h_Q3 = new TH1D("h_Q3","",400,0,6000);
+	TH1D *h_Q2 = new TH1D("h_Q2","",400,0,6000);
+	TH1D *h_L1 = new TH1D("h_L1","",400,0,6000);
+	TH1D *h_ly_tmp = new TH1D("h_ly_tmp","",400,0,6000);
+	TH1D *h_Q1 = new TH1D("h_Q1","",400,0,6000);
 	t1->Draw(Form("Q_depoTotal_thre/%f>>h_Q1",0.58),"","");
 	h_Q1->SetLineColor(color[0]);
 	//h5->SetLineColor(kGreen);	
@@ -159,9 +161,10 @@ void check_reconstruct_all_final(){
 	h_Q3->SetLineColor(color[2]);
 	h_Q2->SetLineColor(color[1]);
 	h_Q3->GetXaxis()->SetTitle("Energy[MeV]");	
+	h_Q3->GetXaxis()->CenterTitle();	
 	if(energy==1)
 		h_Q3->GetXaxis()->SetRangeUser(200,1500);	
-	h_Q3->GetYaxis()->SetRangeUser(0,3000);	
+	h_Q3->GetYaxis()->SetRangeUser(0,2200);	
 	if(energy==3)
 		h_Q3->GetXaxis()->SetRangeUser(1500,3500);	
 	//h_Q3->GetYaxis()->SetRangeUser(0,300);	
@@ -177,7 +180,7 @@ void check_reconstruct_all_final(){
 	cout<<h5->GetMean()<<endl;
 	cout<<h_Q4->GetMean()<<endl;
 	gPad->SetGrid();
-	TLegend *leg = new TLegend(0.2,0.60, 0.5,0.87);
+	TLegend *leg = new TLegend(0.2,0.6, 0.5,0.87);
 	leg->SetBorderSize(0);
 	leg->AddEntry(h_Q1, "Q1", "l");
 	leg->AddEntry(h_Q2, "Q2", "l");

@@ -82,10 +82,13 @@ void check_lep_had_E(){
 
 	g_light->Draw("Al ");
 	g_light->SetLineColor(2);
+	g_light->SetLineWidth(2);
 	g_light->GetYaxis()->SetRangeUser(0.8,1.4);
 	g_light->GetXaxis()->SetRangeUser(0,2);
-	g_light->GetXaxis()->SetTitle("E field[kV/cm]");
+	g_light->GetXaxis()->SetTitle("Drift E field[kV/cm]");
 	g_light->GetYaxis()->SetTitle("e/h");
+	g_light->GetXaxis()->CenterTitle();
+	g_light->GetYaxis()->CenterTitle();
 	//g_charge->Draw("same l *");
 
 	c1->SaveAs("plot/E_H_Efield.pdf");
