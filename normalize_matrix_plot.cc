@@ -1,4 +1,4 @@
-TH2D *normal(TH2D* hmatrix){
+TH2D *normal_2d(TH2D* hmatrix){
 	TH2D *h_norm = (TH2D*)hmatrix->Clone("h_norm");
 	h_norm->SetDirectory(0);
 	h_norm->Reset();
@@ -48,13 +48,19 @@ TLatex text;
 
 
 for(int i=0;i<5;i++){
-	h_matrix_norm[i] = normal(h_matrix[i]);
+	h_matrix_norm[i] = normal_2d(h_matrix[i]);
 	h_matrix_norm[i]->GetXaxis()->SetTitle("E_{input} [MeV]");
 	h_matrix_norm[i]->GetYaxis()->SetTitle("E_{rec} [MeV]");
 	h_matrix_norm[i]->GetXaxis()->SetTitleFont(132);
 	h_matrix_norm[i]->GetYaxis()->SetTitleFont(132);
 	h_matrix_norm[i]->GetXaxis()->SetLabelFont(132);
 	h_matrix_norm[i]->GetYaxis()->SetLabelFont(132);
+	h_matrix_norm[i]->GetXaxis()->SetTitleSize(0.07);
+	h_matrix_norm[i]->GetYaxis()->SetTitleSize(0.07);
+	h_matrix_norm[i]->GetXaxis()->SetLabelSize(0.07);
+	h_matrix_norm[i]->GetYaxis()->SetLabelSize(0.07);
+	h_matrix_norm[i]->GetXaxis()->SetTitleOffset(1.1);
+	h_matrix_norm[i]->GetYaxis()->SetTitleOffset(1.2);
 	h_matrix_norm[i]->GetXaxis()->CenterTitle();
 	h_matrix_norm[i]->GetYaxis()->CenterTitle();
 	h_matrix_norm[i]->Draw("colz");
