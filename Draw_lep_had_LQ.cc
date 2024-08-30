@@ -32,9 +32,9 @@ t1->Add("/data2/users/xning/output/thre_track_leha_edep_nue_*GeV_1kevts.root");
     TH1D* h_L_lep = new TH1D("h_L_lep","",100,0,1.1);
     TH1D* h_L_had = new TH1D("h_L_had","",100,0,1.1);
 
-    h_Q_lep->SetLineColor(1);
+    h_Q_lep->SetLineColor(4);
     h_Q_had->SetLineColor(2);
-    h_L_lep->SetLineColor(1);
+    h_L_lep->SetLineColor(4);
     h_L_had->SetLineColor(2);
 	t1->Draw("(Q_depoList_thre[0]+Q_depoList_thre[6]+Q_depoList_thre[4])/(E_availList[0]+E_availList[6]+E_availList[4])*0.83>>h_Q_lep","","same hist");
     t1->Draw("(Q_depoList_thre[1]+Q_depoList_thre[2]+Q_depoList_thre[3]+Q_depoList_thre[5])/            (E_availList[1]+E_availList[2]+E_availList[3]+E_availList[5])*0.83>>h_Q_had","","same hist");
@@ -42,7 +42,7 @@ t1->Add("/data2/users/xning/output/thre_track_leha_edep_nue_*GeV_1kevts.root");
 	h_Q_had->Scale(1./h_Q_had->Integral());
 	TLatex text;
 	text.SetTextSize(0.1);
-	text.DrawLatex(0.1,0.8,"Charge");
+	text.DrawLatex(0.1,0.8,"(Charge)");
 
 
 c1->cd();
@@ -60,7 +60,7 @@ pad2->cd();
     t1->Draw("(E_depoList_l[1]+E_depoList_l[2]+E_depoList_l[3]+E_depoList_l[5])/(E_availList[1]+        E_availList[2]+E_availList[3]+E_availList[5])>>h_L_had","","same hist");
 	h_L_lep->Scale(1./h_L_lep->Integral());
 	h_L_had->Scale(1./h_L_had->Integral());
-	text.DrawLatex(0.1,0.8,"Light");
+	text.DrawLatex(0.1,0.8,"(Light)");
 
 
 	TLegend *leg3 = new TLegend(0.7,0.30, 0.85,0.7);

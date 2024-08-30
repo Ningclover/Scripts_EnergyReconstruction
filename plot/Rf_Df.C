@@ -4,7 +4,7 @@
 void Rf_Df()
 {
 //=========Macro generated from canvas: c2/c2
-//=========  (Wed Aug 28 15:56:18 2024) by ROOT version 6.28/06
+//=========  (Thu Aug 29 16:10:32 2024) by ROOT version 6.28/06
    TCanvas *c2 = new TCanvas("c2", "c2",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -1468,40 +1468,40 @@ void Rf_Df()
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
-   TLegendEntry *entry=leg->AddEntry("h_Q_lep","Charge; e","P");
+   TLegendEntry *entry=leg->AddEntry("h_Q_lep_m","Charge; e","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(0.6);
+   entry->SetMarkerSize(1.3);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
-   entry=leg->AddEntry("h_Q_had","Charge; h","P");
+   entry=leg->AddEntry("h_Q_had_m","Charge; h","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(5);
-   entry->SetMarkerSize(0.8);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
-   entry=leg->AddEntry("h_L_lep","Light; e","P");
+   entry=leg->AddEntry("h_L_lep_m","Light; e","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(20);
-   entry->SetMarkerSize(0.6);
+   entry->SetMarkerSize(1.3);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
-   entry=leg->AddEntry("h_L_had","Light; h","P");
+   entry=leg->AddEntry("h_L_had_m","Light; h","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(5);
-   entry->SetMarkerSize(0.8);
+   entry->SetMarkerSize(1.5);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
    leg->Draw();

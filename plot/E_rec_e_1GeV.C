@@ -4,7 +4,7 @@
 void E_rec_e_1GeV()
 {
 //=========Macro generated from canvas: c3/c3
-//=========  (Wed Aug 28 14:05:44 2024) by ROOT version 6.28/06
+//=========  (Thu Aug 29 16:21:05 2024) by ROOT version 6.28/06
    TCanvas *c3 = new TCanvas("c3", "c3",76,85,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -82,6 +82,7 @@ void E_rec_e_1GeV()
    h_Q3__6->GetXaxis()->SetTitleSize(0.06);
    h_Q3__6->GetXaxis()->SetTitleOffset(1.1);
    h_Q3__6->GetXaxis()->SetTitleFont(132);
+   h_Q3__6->GetYaxis()->SetTitle("Number of Events/(15MeV)");
    h_Q3__6->GetYaxis()->SetLabelFont(132);
    h_Q3__6->GetYaxis()->SetLabelSize(0.06);
    h_Q3__6->GetYaxis()->SetTitleSize(0.06);

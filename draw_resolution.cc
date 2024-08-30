@@ -15,9 +15,6 @@ void draw_resolution(){
 	//TString KE[] = {"0.5","0.6","0.7","0.8","0.9","1","1.5","2","2.5","3","3.5","4","4.5","5"};
 	double E[14]={0}, res_Q4[14]={0},res_Q1[14]={0},res_Q2[14]={0},res_L1[14]={0},res_Q3[14]={0},resolution_TDR[14]={0};
 	TCanvas *c2 = new TCanvas("c2","c2",800,600);
-	TH2D *h_axis = new TH2D("h_axis","",1,0,6000,1,0,80);
-	h_axis->Draw("");
-	h_axis->GetXaxis()->SetTitle("Energy[MeV]");
 	for (int i=0;i<10;i++){
 		//for (int i=0;i<14;i++){
 		double input_E = atof(KE[i]);
@@ -152,6 +149,11 @@ void draw_resolution(){
 		}
 	}
 
+	TH2D *h_axis = new TH2D("h_axis","",1,0,5.5,1,0,20);
+	h_axis->GetXaxis()->SetTitle("Energy [GeV]");
+	h_axis->GetYaxis()->SetTitle("Resolution [%]");
+	h_axis->GetXaxis()->CenterTitle();
+	h_axis->GetYaxis()->CenterTitle();
 	TCanvas *c1 = new TCanvas("c1","c1",800,600);
 	gPad->SetGrid();
 	int color[]={1,kGreen+2,4,2,6,5};
@@ -161,11 +163,10 @@ void draw_resolution(){
 	TGraph *g4 = new TGraph(10,E,res_L1); //L1
 	TGraph *g5 = new TGraph(10,E,res_Q4);	//Q4
 	TGraph *g6 = new TGraph(10,E,resolution_TDR);
-	g1->Draw("AL");
-	g1->GetXaxis()->SetTitle("Energy [GeV]");
-	g1->GetYaxis()->SetTitle("Resolution [%]");
-	g1->GetXaxis()->CenterTitle();
-	g1->GetYaxis()->CenterTitle();
+	h_axis->Draw("");
+	g1->Draw("L same");
+//	g1->GetXaxis()->SetTitle("Energy [GeV]");
+//	g1->GetYaxis()->SetTitle("Resolution [%]");
 	g1->SetLineWidth(2);
 	g2->SetLineWidth(2);
 	g3->SetLineWidth(2);

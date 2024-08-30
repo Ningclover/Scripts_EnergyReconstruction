@@ -4,11 +4,11 @@
 void resolution()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Wed Aug 28 14:42:35 2024) by ROOT version 6.28/06
+//=========  (Thu Aug 29 16:20:34 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",76,85,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
-   c1->Range(-1.15,-4.324324,6.35,22.7027);
+   c1->Range(-1.222222,-4.324324,6.416667,22.7027);
    c1->SetFillColor(0);
    c1->SetBorderMode(0);
    c1->SetBorderSize(2);
@@ -21,6 +21,37 @@ void resolution()
    c1->SetBottomMargin(0.16);
    c1->SetFrameBorderMode(0);
    c1->SetFrameBorderMode(0);
+   
+   TH2D *h_axis__1 = new TH2D("h_axis__1","",1,0,5.5,1,0,20);
+   h_axis__1->SetStats(0);
+
+   Int_t ci;      // for color index setting
+   TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#000099");
+   h_axis__1->SetLineColor(ci);
+   h_axis__1->SetLineWidth(2);
+   h_axis__1->SetMarkerStyle(20);
+   h_axis__1->SetMarkerSize(0.6);
+   h_axis__1->GetXaxis()->SetTitle("Energy [GeV]");
+   h_axis__1->GetXaxis()->CenterTitle(true);
+   h_axis__1->GetXaxis()->SetLabelFont(132);
+   h_axis__1->GetXaxis()->SetLabelSize(0.06);
+   h_axis__1->GetXaxis()->SetTitleSize(0.06);
+   h_axis__1->GetXaxis()->SetTitleOffset(1.1);
+   h_axis__1->GetXaxis()->SetTitleFont(132);
+   h_axis__1->GetYaxis()->SetTitle("Resolution [%]");
+   h_axis__1->GetYaxis()->CenterTitle(true);
+   h_axis__1->GetYaxis()->SetLabelFont(132);
+   h_axis__1->GetYaxis()->SetLabelSize(0.06);
+   h_axis__1->GetYaxis()->SetTitleSize(0.06);
+   h_axis__1->GetYaxis()->SetTitleOffset(1.2);
+   h_axis__1->GetYaxis()->SetTitleFont(132);
+   h_axis__1->GetZaxis()->SetLabelFont(132);
+   h_axis__1->GetZaxis()->SetLabelSize(0.06);
+   h_axis__1->GetZaxis()->SetTitleSize(0.06);
+   h_axis__1->GetZaxis()->SetTitleOffset(1);
+   h_axis__1->GetZaxis()->SetTitleFont(132);
+   h_axis__1->Draw("");
    
    Double_t Graph0_fx1[10] = { 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 };
    Double_t Graph0_fy1[10] = { 7.78258, 5.78834, 5.343876, 4.984401, 4.616562, 4.454771, 4.283524, 4.246414, 4.091021, 3.897034 };
@@ -39,22 +70,16 @@ void resolution()
    Graph_Graph01->SetDirectory(nullptr);
    Graph_Graph01->SetStats(0);
 
-   Int_t ci;      // for color index setting
-   TColor *color; // for color definition with alpha
    ci = TColor::GetColor("#000099");
    Graph_Graph01->SetLineColor(ci);
    Graph_Graph01->SetLineWidth(2);
    Graph_Graph01->SetMarkerStyle(20);
    Graph_Graph01->SetMarkerSize(0.6);
-   Graph_Graph01->GetXaxis()->SetTitle("Energy [GeV]");
-   Graph_Graph01->GetXaxis()->CenterTitle(true);
    Graph_Graph01->GetXaxis()->SetLabelFont(132);
    Graph_Graph01->GetXaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleSize(0.06);
    Graph_Graph01->GetXaxis()->SetTitleOffset(1.1);
    Graph_Graph01->GetXaxis()->SetTitleFont(132);
-   Graph_Graph01->GetYaxis()->SetTitle("Resolution [%]");
-   Graph_Graph01->GetYaxis()->CenterTitle(true);
    Graph_Graph01->GetYaxis()->SetLabelFont(132);
    Graph_Graph01->GetYaxis()->SetLabelSize(0.06);
    Graph_Graph01->GetYaxis()->SetTitleSize(0.06);
@@ -67,7 +92,7 @@ void resolution()
    Graph_Graph01->GetZaxis()->SetTitleFont(132);
    graph->SetHistogram(Graph_Graph01);
    
-   graph->Draw("al");
+   graph->Draw("l ");
    
    Double_t Graph1_fx2[10] = { 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 };
    Double_t Graph1_fy2[10] = { 9.81404, 11.33571, 10.89328, 9.854855, 9.236902, 8.861025, 8.316676, 8.189959, 7.574486, 6.17943 };

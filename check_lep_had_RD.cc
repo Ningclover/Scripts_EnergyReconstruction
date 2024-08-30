@@ -23,9 +23,12 @@ void check_lep_had_RD(){
 
 	TH2D* h_Q_lep = new TH2D("h_Q_lep","",100,0,1,100,0,1);
 	TH2D* h_Q_had = new TH2D("h_Q_had","",100,0,1,100,0,1);
-
 	TH2D* h_L_lep = new TH2D("h_L_lep","",100,0,1,100,0,1);
 	TH2D* h_L_had = new TH2D("h_L_had","",100,0,1,100,0,1);
+	TH2D* h_Q_lep_m = new TH2D("h_Q_lep_m","",100,0,1,100,0,1);
+	TH2D* h_Q_had_m = new TH2D("h_Q_had_m","",100,0,1,100,0,1);
+	TH2D* h_L_lep_m = new TH2D("h_L_lep_m","",100,0,1,100,0,1);
+	TH2D* h_L_had_m = new TH2D("h_L_had_m","",100,0,1,100,0,1);
 	//h_L_lep->SetMarkerStyle(1);
 	h_L_lep->SetMarkerColor(2);
 	h_L_had->SetMarkerStyle(5);
@@ -38,6 +41,18 @@ void check_lep_had_RD(){
 	h_Q_had->SetMarkerStyle(5);
 	h_Q_had->SetMarkerColor(4);
 	h_Q_had->SetMarkerSize(0.8);
+
+	h_L_lep_m->SetMarkerColor(2);
+	h_L_had_m->SetMarkerStyle(5);
+	h_L_had_m->SetMarkerColor(2);
+	h_Q_lep_m->SetMarkerColor(4);
+	h_Q_lep_m->SetLineWidth(0);
+	h_Q_had_m->SetMarkerStyle(5);
+	h_Q_had_m->SetMarkerColor(4);
+	h_Q_had_m->SetMarkerSize(1.5);
+	h_L_had_m->SetMarkerSize(1.5);
+	h_Q_lep_m->SetMarkerSize(1.3);
+	h_L_lep_m->SetMarkerSize(1.3);
 
 
 
@@ -99,13 +114,13 @@ void check_lep_had_RD(){
 	TLegend *leg3 = new TLegend(0.18,0.18, 0.85,0.24);
 	//leg3->SetBorderSize(0);
 	leg3->SetNColumns(4);
-	auto entry = leg3->AddEntry(h_Q_lep, "Charge; e", "P");
+	auto entry = leg3->AddEntry(h_Q_lep_m, "Charge; e", "P");
 	entry->SetTextSize(28);	
-	entry = leg3->AddEntry(h_Q_had, "Charge; h", "P");
+	entry = leg3->AddEntry(h_Q_had_m, "Charge; h", "P");
 	entry->SetTextSize(28);	
-	entry = leg3->AddEntry(h_L_lep, "Light; e", "P");
+	entry = leg3->AddEntry(h_L_lep_m, "Light; e", "P");
 	entry->SetTextSize(28);	
-	entry = leg3->AddEntry(h_L_had, "Light; h", "P");
+	entry = leg3->AddEntry(h_L_had_m, "Light; h", "P");
 	entry->SetTextSize(28);	
 	leg3->Draw();
 

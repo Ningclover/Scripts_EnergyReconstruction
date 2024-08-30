@@ -30,6 +30,7 @@ void check_reconstruct_all_final(){
 	t1->Draw("Q_depoTotal_thre*0.83>>h4","","same");
 	t1->Draw("E_depoTotal_l>>h5","","same");
 	h1->GetXaxis()->SetTitle("Energy[MeV]");
+	h1->GetYaxis()->SetTitle("Number of Events/(15MeV)");
 	h1->GetXaxis()->CenterTitle();
 	h1->SetLineColor(color2[0]);
 	h2->SetLineColor(color2[1]);
@@ -161,6 +162,7 @@ void check_reconstruct_all_final(){
 	h_Q3->SetLineColor(color[2]);
 	h_Q2->SetLineColor(color[1]);
 	h_Q3->GetXaxis()->SetTitle("Energy[MeV]");	
+	h_Q3->GetYaxis()->SetTitle("Number of Events/(15MeV)");
 	h_Q3->GetXaxis()->CenterTitle();	
 	if(energy==1)
 		h_Q3->GetXaxis()->SetRangeUser(200,1500);	

@@ -4,7 +4,7 @@
 void lep_had_LQ()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Wed Aug 28 15:52:31 2024) by ROOT version 6.28/06
+//=========  (Thu Aug 29 16:12:41 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -105,6 +105,7 @@ void lep_had_LQ()
    h_Q_lep__2->SetBinError(52,0.0003741657);
    h_Q_lep__2->SetEntries(10000);
    h_Q_lep__2->SetStats(0);
+   h_Q_lep__2->SetLineColor(4);
    h_Q_lep__2->SetLineWidth(2);
    h_Q_lep__2->SetMarkerStyle(20);
    h_Q_lep__2->SetMarkerSize(0.6);
@@ -298,7 +299,7 @@ void lep_had_LQ()
    h_Q_had__3->GetZaxis()->SetTitleOffset(1);
    h_Q_had__3->GetZaxis()->SetTitleFont(132);
    h_Q_had__3->Draw("same hist");
-   TLatex *   tex = new TLatex(0.1,0.8,"Charge");
+   TLatex *   tex = new TLatex(0.1,0.8,"(Charge)");
    tex->SetTextFont(132);
    tex->SetTextSize(0.1);
    tex->SetLineWidth(2);
@@ -379,6 +380,7 @@ void lep_had_LQ()
    h_L_lep__5->SetBinError(46,0.0001);
    h_L_lep__5->SetEntries(10000);
    h_L_lep__5->SetStats(0);
+   h_L_lep__5->SetLineColor(4);
    h_L_lep__5->SetLineWidth(2);
    h_L_lep__5->SetMarkerStyle(20);
    h_L_lep__5->SetMarkerSize(0.6);
@@ -590,7 +592,7 @@ void lep_had_LQ()
    h_L_had__6->GetZaxis()->SetTitleOffset(1);
    h_L_had__6->GetZaxis()->SetTitleFont(132);
    h_L_had__6->Draw("same hist");
-      tex = new TLatex(0.1,0.8,"Light");
+      tex = new TLatex(0.1,0.8,"(Light)");
    tex->SetTextFont(132);
    tex->SetTextSize(0.1);
    tex->SetLineWidth(2);
@@ -605,7 +607,7 @@ void lep_had_LQ()
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
    TLegendEntry *entry=leg->AddEntry("h_Q_lep","e","l");
-   entry->SetLineColor(1);
+   entry->SetLineColor(4);
    entry->SetLineStyle(1);
    entry->SetLineWidth(2);
    entry->SetMarkerColor(1);

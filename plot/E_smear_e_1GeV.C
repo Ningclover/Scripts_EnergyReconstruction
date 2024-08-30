@@ -4,7 +4,7 @@
 void E_smear_e_1GeV()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Wed Aug 28 14:05:42 2024) by ROOT version 6.28/06
+//=========  (Thu Aug 29 16:21:03 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -49,6 +49,7 @@ void E_smear_e_1GeV()
    h1__1->GetXaxis()->SetTitleSize(0.06);
    h1__1->GetXaxis()->SetTitleOffset(1.1);
    h1__1->GetXaxis()->SetTitleFont(132);
+   h1__1->GetYaxis()->SetTitle("Number of Events/(15MeV)");
    h1__1->GetYaxis()->SetLabelFont(132);
    h1__1->GetYaxis()->SetLabelSize(0.06);
    h1__1->GetYaxis()->SetTitleSize(0.06);

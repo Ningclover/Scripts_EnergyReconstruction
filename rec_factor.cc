@@ -7,7 +7,7 @@ f1->SetParameter(0,0.5);
 f1->Draw();
 f1->GetYaxis()->SetRangeUser(0,0.9);
 f1->GetYaxis()->SetTitle("Recombination Factor");
-f1->GetXaxis()->SetTitle("dE/dx [2.1MeV/cm]");
+f1->GetXaxis()->SetTitle("(dE/dx)/(2.1MeV/cm)");
 f1->GetYaxis()->CenterTitle();
 f1->GetXaxis()->CenterTitle();
 //f1->GetXaxis()->SetTitle("Number of MIP [2.1MeV/cm]");
