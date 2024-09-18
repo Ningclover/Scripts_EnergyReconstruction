@@ -44,7 +44,7 @@ TCanvas *c1 = new TCanvas("c1","c1",800,600);
 
 TLatex text;
     text.SetTextFont(133);
-    text.SetTextSize(35);
+    text.SetTextSize(40);
 
 
 for(int i=0;i<5;i++){
@@ -55,12 +55,12 @@ for(int i=0;i<5;i++){
 	h_matrix_norm[i]->GetYaxis()->SetTitleFont(132);
 	h_matrix_norm[i]->GetXaxis()->SetLabelFont(132);
 	h_matrix_norm[i]->GetYaxis()->SetLabelFont(132);
-	h_matrix_norm[i]->GetXaxis()->SetTitleSize(0.07);
-	h_matrix_norm[i]->GetYaxis()->SetTitleSize(0.07);
-	h_matrix_norm[i]->GetXaxis()->SetLabelSize(0.07);
-	h_matrix_norm[i]->GetYaxis()->SetLabelSize(0.07);
-	h_matrix_norm[i]->GetXaxis()->SetTitleOffset(1.1);
-	h_matrix_norm[i]->GetYaxis()->SetTitleOffset(1.2);
+	h_matrix_norm[i]->GetXaxis()->SetTitleSize(0.08);
+	h_matrix_norm[i]->GetYaxis()->SetTitleSize(0.08);
+	h_matrix_norm[i]->GetXaxis()->SetLabelSize(0.06);
+	h_matrix_norm[i]->GetYaxis()->SetLabelSize(0.06);
+	h_matrix_norm[i]->GetXaxis()->SetTitleOffset(0.9);
+	h_matrix_norm[i]->GetYaxis()->SetTitleOffset(0.9);
 	h_matrix_norm[i]->GetXaxis()->CenterTitle();
 	h_matrix_norm[i]->GetYaxis()->CenterTitle();
 	h_matrix_norm[i]->Draw("colz");

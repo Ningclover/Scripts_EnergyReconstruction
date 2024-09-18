@@ -61,7 +61,7 @@ void Ratio_on_E(double E, double *ratio){
 }
 
 void check_lep_had_E(){
-	gPad->SetGrid();
+	//gPad->SetGrid();
 //	c1->SaveAs("tmp.pdf[");
 	double Efield[] = {0.1,0.3,0.5,0.7,1,1.5,2.5};
 	const int N = sizeof(Efield)/sizeof(Efield[0]);
@@ -85,7 +85,7 @@ void check_lep_had_E(){
 	g_light->SetLineWidth(2);
 	g_light->GetYaxis()->SetRangeUser(0.8,1.4);
 	g_light->GetXaxis()->SetRangeUser(0,2);
-	g_light->GetXaxis()->SetTitle("Drift E field[kV/cm]");
+	g_light->GetXaxis()->SetTitle("Drift E field [kV/cm]");
 	g_light->GetYaxis()->SetTitle("e/h");
 	g_light->GetXaxis()->CenterTitle();
 	g_light->GetYaxis()->CenterTitle();

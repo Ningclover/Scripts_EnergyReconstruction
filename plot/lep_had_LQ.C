@@ -4,8 +4,8 @@
 void lep_had_LQ()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Thu Aug 29 16:12:41 2024) by ROOT version 6.28/06
-   TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
+//=========  (Wed Sep 18 01:36:54 2024) by ROOT version 6.28/06
+   TCanvas *c1 = new TCanvas("c1", "c1",1976,23,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
    c1->Range(0,0,1,1);
@@ -27,8 +27,6 @@ void lep_had_LQ()
    pad1->SetFillColor(0);
    pad1->SetBorderMode(0);
    pad1->SetBorderSize(2);
-   pad1->SetGridx();
-   pad1->SetGridy();
    pad1->SetTickx(1);
    pad1->SetTicky(1);
    pad1->SetLeftMargin(0.16);
@@ -48,7 +46,7 @@ void lep_had_LQ()
    h_re_1__1->SetLineWidth(2);
    h_re_1__1->SetMarkerStyle(20);
    h_re_1__1->SetMarkerSize(0.6);
-   h_re_1__1->GetXaxis()->SetTitle("Calorimeters response");
+   h_re_1__1->GetXaxis()->SetTitle("Calorimeter response");
    h_re_1__1->GetXaxis()->CenterTitle(true);
    h_re_1__1->GetXaxis()->SetLabelFont(132);
    h_re_1__1->GetXaxis()->SetLabelSize(0.08);
@@ -315,8 +313,6 @@ void lep_had_LQ()
    pad2->SetFillColor(0);
    pad2->SetBorderMode(0);
    pad2->SetBorderSize(2);
-   pad2->SetGridx();
-   pad2->SetGridy();
    pad2->SetTickx(1);
    pad2->SetTicky(1);
    pad2->SetLeftMargin(0.16);
@@ -333,7 +329,7 @@ void lep_had_LQ()
    h_re_1__4->SetLineWidth(2);
    h_re_1__4->SetMarkerStyle(20);
    h_re_1__4->SetMarkerSize(0.6);
-   h_re_1__4->GetXaxis()->SetTitle("Calorimeters response");
+   h_re_1__4->GetXaxis()->SetTitle("Calorimeter response");
    h_re_1__4->GetXaxis()->CenterTitle(true);
    h_re_1__4->GetXaxis()->SetLabelFont(132);
    h_re_1__4->GetXaxis()->SetLabelSize(0.08);
@@ -626,6 +622,27 @@ void lep_had_LQ()
    pad2->Modified();
    c1->cd();
   
+// ------------>Primitives in pad: pad4
+   TPad *pad4 = new TPad("pad4", "pad4",0,0.4504348,0.1566416,0.5513043);
+   pad4->Draw();
+   pad4->cd();
+   pad4->Range(0,0,1,1);
+   pad4->SetFillColor(0);
+   pad4->SetBorderMode(0);
+   pad4->SetBorderSize(2);
+   pad4->SetTickx(1);
+   pad4->SetTicky(1);
+   pad4->SetLeftMargin(0.16);
+   pad4->SetRightMargin(0.12);
+   pad4->SetBottomMargin(0.16);
+   pad4->SetFrameBorderMode(0);
+   TText *text = new TText(0.88,0.4,"0");
+   text->SetTextFont(133);
+   text->SetTextSize(23);
+   text->Draw();
+   pad4->Modified();
+   c1->cd();
+  
 // ------------>Primitives in pad: pad3
    TPad *pad3 = new TPad("pad3", "pad3",0,0,0.1,1);
    pad3->Draw();
@@ -640,7 +657,7 @@ void lep_had_LQ()
    pad3->SetRightMargin(0.12);
    pad3->SetBottomMargin(0.16);
    pad3->SetFrameBorderMode(0);
-   TText *text = new TText(0.8,0.4,"Probability");
+   text = new TText(0.8,0.4,"Probability");
    text->SetTextFont(133);
    text->SetTextSize(30);
    text->SetTextAngle(90);

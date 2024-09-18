@@ -18,7 +18,7 @@ void check_reconstruct_all_final(){
 	double E_input = energy*1000;
 	cout<<t1->GetEntries()<<endl;
 	TCanvas *c1 = new TCanvas("c1","c1",800,600);
-	gPad->SetGrid();
+	//gPad->SetGrid();
 	TH1D *h1 = new TH1D("h1","",400,0,6000);
 	TH1D *h2 = new TH1D("h2","",400,0,6000);
 	TH1D *h3 = new TH1D("h3","",400,0,6000);
@@ -29,9 +29,10 @@ void check_reconstruct_all_final(){
 	t1->Draw("Q_depoTotal*0.83>>h3","","same");
 	t1->Draw("Q_depoTotal_thre*0.83>>h4","","same");
 	t1->Draw("E_depoTotal_l>>h5","","same");
-	h1->GetXaxis()->SetTitle("Energy[MeV]");
-	h1->GetYaxis()->SetTitle("Number of Events/(15MeV)");
+	h1->GetXaxis()->SetTitle("Energy [MeV]");
+	h1->GetYaxis()->SetTitle("Events/(15 MeV)");
 	h1->GetXaxis()->CenterTitle();
+	h1->GetYaxis()->CenterTitle();
 	h1->SetLineColor(color2[0]);
 	h2->SetLineColor(color2[1]);
 	h3->SetLineColor(color2[2]);
@@ -161,9 +162,10 @@ void check_reconstruct_all_final(){
 	h_Q4->SetLineColor(kBlack);
 	h_Q3->SetLineColor(color[2]);
 	h_Q2->SetLineColor(color[1]);
-	h_Q3->GetXaxis()->SetTitle("Energy[MeV]");	
-	h_Q3->GetYaxis()->SetTitle("Number of Events/(15MeV)");
+	h_Q3->GetXaxis()->SetTitle("Energy [MeV]");	
+	h_Q3->GetYaxis()->SetTitle("Events/(15 MeV)");
 	h_Q3->GetXaxis()->CenterTitle();	
+	h_Q3->GetYaxis()->CenterTitle();	
 	if(energy==1)
 		h_Q3->GetXaxis()->SetRangeUser(200,1500);	
 	h_Q3->GetYaxis()->SetRangeUser(0,2200);	
@@ -181,7 +183,7 @@ void check_reconstruct_all_final(){
 	h_Q1->Draw("same");	
 	cout<<h5->GetMean()<<endl;
 	cout<<h_Q4->GetMean()<<endl;
-	gPad->SetGrid();
+	//gPad->SetGrid();
 	TLegend *leg = new TLegend(0.2,0.6, 0.5,0.87);
 	leg->SetBorderSize(0);
 	leg->AddEntry(h_Q1, "Q1", "l");

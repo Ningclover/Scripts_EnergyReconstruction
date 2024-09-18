@@ -4,16 +4,14 @@
 void RL_Efield()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Wed Aug 28 14:08:37 2024) by ROOT version 6.28/06
-   TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
+//=========  (Wed Sep  4 14:51:29 2024) by ROOT version 6.28/06
+   TCanvas *c1 = new TCanvas("c1", "c1",0,0,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
    c1->Range(-0.4444444,0.1702703,2.333333,0.9810811);
    c1->SetFillColor(0);
    c1->SetBorderMode(0);
    c1->SetBorderSize(2);
-   c1->SetGridx();
-   c1->SetGridy();
    c1->SetTickx(1);
    c1->SetTicky(1);
    c1->SetLeftMargin(0.16);
@@ -32,7 +30,7 @@ void RL_Efield()
    h1__1->SetLineWidth(2);
    h1__1->SetMarkerStyle(20);
    h1__1->SetMarkerSize(0.6);
-   h1__1->GetXaxis()->SetTitle("Drift E field[kV/cm]");
+   h1__1->GetXaxis()->SetTitle("Drift E field [kV/cm]");
    h1__1->GetXaxis()->CenterTitle(true);
    h1__1->GetXaxis()->SetLabelFont(132);
    h1__1->GetXaxis()->SetLabelSize(0.06);

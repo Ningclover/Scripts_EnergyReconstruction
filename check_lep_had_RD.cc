@@ -111,19 +111,23 @@ void check_lep_had_RD(){
 	file->Close();
 
 	//TLegend *leg3 = new TLegend(0.55,0.72, 0.85,0.88);
-	TLegend *leg3 = new TLegend(0.18,0.18, 0.85,0.24);
-	//leg3->SetBorderSize(0);
-	leg3->SetNColumns(4);
-	auto entry = leg3->AddEntry(h_Q_lep_m, "Charge; e", "P");
+	double val = (0.89-0.18)/4;
+	TLegend *leg1 = new TLegend(0.18,0.18, val+0.18,0.24);
+	auto entry = leg1->AddEntry(h_Q_lep_m, "Charge; e", "P");
 	entry->SetTextSize(28);	
-	entry = leg3->AddEntry(h_Q_had_m, "Charge; h", "P");
+	TLegend *leg2 = new TLegend(0.18+val,0.18, 0.18+val*2,0.24);
+	entry = leg2->AddEntry(h_Q_had_m, "Charge; h", "P");
 	entry->SetTextSize(28);	
+	TLegend *leg3 = new TLegend(0.18+val*2,0.18, 0.18+val*3-0.02,0.24);
 	entry = leg3->AddEntry(h_L_lep_m, "Light; e", "P");
 	entry->SetTextSize(28);	
-	entry = leg3->AddEntry(h_L_had_m, "Light; h", "P");
+	TLegend *leg4 = new TLegend(0.18+val*3-0.02,0.18, 0.18+val*4-0.04,0.24);
+	entry = leg4->AddEntry(h_L_had_m, "Light; h", "P");
 	entry->SetTextSize(28);	
+	leg1->Draw();
+	leg2->Draw();
 	leg3->Draw();
-
+	leg4->Draw();
 
 	c2->SaveAs("plot/Rf_Df.pdf");
 	c2->SaveAs("plot/Rf_Df.C");

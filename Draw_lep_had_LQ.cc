@@ -1,7 +1,7 @@
 void Draw_lep_had_LQ(){
 TCanvas *c1 = new TCanvas("c1","c1",800,600);
 TPad *pad1 = new TPad("pad1","pad1",0,0,1,0.5);
-pad1->SetGrid();
+//pad1->SetGrid();
 pad1->SetTopMargin(0);
 pad1->SetBottomMargin(0.2);
 //pad1->SetBorderMode();
@@ -13,7 +13,7 @@ int ndiv = 505;
     TH2D *h_axis = new TH2D("h_re_1","",1,0,1.1,1,0,1);
     h_axis->Draw("");
 	h_axis->GetYaxis()->SetNdivisions(ndiv);
-    h_axis->GetXaxis()->SetTitle("Calorimeters response");
+    h_axis->GetXaxis()->SetTitle("Calorimeter response");
 	h_axis->GetXaxis()->CenterTitle();
     h_axis->GetXaxis()->SetTitleOffset(0.9);
     h_axis->GetXaxis()->SetTitleSize(0.1);
@@ -48,7 +48,7 @@ t1->Add("/data2/users/xning/output/thre_track_leha_edep_nue_*GeV_1kevts.root");
 c1->cd();
 
 TPad *pad2 = new TPad("pad2","pad2",0,0.5,1,1);
-pad2->SetGrid();
+//pad2->SetGrid();
 pad2->SetBottomMargin(0);
 //pad2->SetBorderMode(0);
 pad2->Draw();
@@ -69,6 +69,16 @@ pad2->cd();
     leg3->AddEntry(h_Q_had, "h", "l");
     leg3->Draw();
 
+
+c1->cd();
+TPad *pad4 = new TPad("pad4","pad4",0,0.4504348,0.1566416,0.5513043);
+pad4->Draw();
+pad4->cd();
+auto *tt2 = new TText(0.88,0.4,"0");
+tt2->SetTextFont(133);
+tt2->SetTextSize(23);
+tt2->Draw();
+
 c1->cd();
 TPad *pad3 = new TPad("pad3","pad3",0,0,0.1,1);
 pad3->Draw();
@@ -78,6 +88,10 @@ tt->SetTextFont(133);
 tt->SetTextSize(30);
 tt->SetTextAngle(90);
 tt->Draw();
+
+
+
+
 
 	c1->SaveAs("plot/lep_had_LQ.pdf");
 	c1->SaveAs("plot/lep_had_LQ.C");

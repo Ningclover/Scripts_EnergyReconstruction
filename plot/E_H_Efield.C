@@ -4,7 +4,7 @@
 void E_H_Efield()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Wed Aug 28 14:12:03 2024) by ROOT version 6.28/06
+//=========  (Wed Sep  4 15:11:20 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -12,8 +12,6 @@ void E_H_Efield()
    c1->SetFillColor(0);
    c1->SetBorderMode(0);
    c1->SetBorderSize(2);
-   c1->SetGridx();
-   c1->SetGridy();
    c1->SetTickx(1);
    c1->SetTicky(1);
    c1->SetLeftMargin(0.16);
@@ -46,7 +44,7 @@ void E_H_Efield()
    Graph_Graph01->SetLineWidth(2);
    Graph_Graph01->SetMarkerStyle(20);
    Graph_Graph01->SetMarkerSize(0.6);
-   Graph_Graph01->GetXaxis()->SetTitle("Drift E field[kV/cm]");
+   Graph_Graph01->GetXaxis()->SetTitle("Drift E field [kV/cm]");
    Graph_Graph01->GetXaxis()->SetRange(1,73);
    Graph_Graph01->GetXaxis()->CenterTitle(true);
    Graph_Graph01->GetXaxis()->SetLabelFont(132);

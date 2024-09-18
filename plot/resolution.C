@@ -4,7 +4,7 @@
 void resolution()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Thu Aug 29 16:20:34 2024) by ROOT version 6.28/06
+//=========  (Wed Sep  4 14:56:00 2024) by ROOT version 6.28/06
    TCanvas *c1 = new TCanvas("c1", "c1",76,85,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -12,8 +12,6 @@ void resolution()
    c1->SetFillColor(0);
    c1->SetBorderMode(0);
    c1->SetBorderSize(2);
-   c1->SetGridx();
-   c1->SetGridy();
    c1->SetTickx(1);
    c1->SetTicky(1);
    c1->SetLeftMargin(0.16);

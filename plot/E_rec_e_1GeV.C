@@ -4,16 +4,14 @@
 void E_rec_e_1GeV()
 {
 //=========Macro generated from canvas: c3/c3
-//=========  (Thu Aug 29 16:21:05 2024) by ROOT version 6.28/06
-   TCanvas *c3 = new TCanvas("c3", "c3",76,85,800,600);
+//=========  (Mon Sep 16 00:03:26 2024) by ROOT version 6.28/06
+   TCanvas *c3 = new TCanvas("c3", "c3",1976,23,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
    c3->Range(-94.99998,-475.6757,1717.5,2497.297);
    c3->SetFillColor(0);
    c3->SetBorderMode(0);
    c3->SetBorderSize(2);
-   c3->SetGridx();
-   c3->SetGridy();
    c3->SetTickx(1);
    c3->SetTicky(1);
    c3->SetLeftMargin(0.16);
@@ -74,7 +72,7 @@ void E_rec_e_1GeV()
    h_Q3__6->SetLineWidth(2);
    h_Q3__6->SetMarkerStyle(20);
    h_Q3__6->SetMarkerSize(0.6);
-   h_Q3__6->GetXaxis()->SetTitle("Energy[MeV]");
+   h_Q3__6->GetXaxis()->SetTitle("Energy [MeV]");
    h_Q3__6->GetXaxis()->SetRange(14,100);
    h_Q3__6->GetXaxis()->CenterTitle(true);
    h_Q3__6->GetXaxis()->SetLabelFont(132);
@@ -82,7 +80,8 @@ void E_rec_e_1GeV()
    h_Q3__6->GetXaxis()->SetTitleSize(0.06);
    h_Q3__6->GetXaxis()->SetTitleOffset(1.1);
    h_Q3__6->GetXaxis()->SetTitleFont(132);
-   h_Q3__6->GetYaxis()->SetTitle("Number of Events/(15MeV)");
+   h_Q3__6->GetYaxis()->SetTitle("Events/(15 MeV)");
+   h_Q3__6->GetYaxis()->CenterTitle(true);
    h_Q3__6->GetYaxis()->SetLabelFont(132);
    h_Q3__6->GetYaxis()->SetLabelSize(0.06);
    h_Q3__6->GetYaxis()->SetTitleSize(0.06);

@@ -4,7 +4,7 @@
 void nue_cc_spec()
 {
 //=========Macro generated from canvas: c2/c2
-//=========  (Wed Aug 28 14:47:46 2024) by ROOT version 6.28/06
+//=========  (Wed Sep  4 15:12:38 2024) by ROOT version 6.28/06
    TCanvas *c2 = new TCanvas("c2", "c2",10,64,700,500);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -12,8 +12,6 @@ void nue_cc_spec()
    c2->SetFillColor(0);
    c2->SetBorderMode(0);
    c2->SetBorderSize(2);
-   c2->SetGridx();
-   c2->SetGridy();
    c2->SetTickx(1);
    c2->SetTicky(1);
    c2->SetLeftMargin(0.16);
@@ -80,7 +78,7 @@ void nue_cc_spec()
    hOsc_1dO57MeV__4->SetLineWidth(2);
    hOsc_1dO57MeV__4->SetMarkerStyle(20);
    hOsc_1dO57MeV__4->SetMarkerSize(0.6);
-   hOsc_1dO57MeV__4->GetXaxis()->SetTitle("Energy[MeV]");
+   hOsc_1dO57MeV__4->GetXaxis()->SetTitle("Energy [MeV]");
    hOsc_1dO57MeV__4->GetXaxis()->SetRange(1,48);
    hOsc_1dO57MeV__4->GetXaxis()->CenterTitle(true);
    hOsc_1dO57MeV__4->GetXaxis()->SetLabelFont(132);

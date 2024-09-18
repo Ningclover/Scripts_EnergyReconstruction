@@ -97,11 +97,11 @@ void smear_dune_flux(){
 	}
 
 	TCanvas *c1 = new TCanvas("c1","c1",1);
-	gPad->SetGrid();
+//	gPad->SetGrid();
 	gStyle->SetOptStat(0);
 	h_spec_smear[0][0]->Draw("hist");
 	h_spec_smear[0][0]->GetXaxis()->SetRangeUser(0,6000);
-	h_spec_smear[0][0]->GetXaxis()->SetTitle("Energy[MeV]");
+	h_spec_smear[0][0]->GetXaxis()->SetTitle("Energy [MeV]");
 	h_spec_smear[0][0]->GetXaxis()->CenterTitle();
 	h_spec_smear[0][0]->GetYaxis()->SetRangeUser(0,50);
 	h_spec_smear[0][0]->GetYaxis()->SetTitle("#nu_{e}CC Events / (40 kTon #upoint y #upoint 1.2 MW)");
@@ -124,14 +124,14 @@ void smear_dune_flux(){
 		c1->SaveAs("plot/nue_cc_spec_smear.C");
 
 	TCanvas *c2 = new TCanvas("c2","c2",1);
-	gPad->SetGrid();
+//	gPad->SetGrid();
 	gStyle->SetOptStat(0);
 	TH1D *h0 = flux2MeV(h_spec[0]);
 	TH1D *h1 = flux2MeV(h_spec[1]);
 	TH1D *h2 = flux2MeV(h_spec[2]);
 	h0->Draw("hist");
 	h0->GetXaxis()->SetRangeUser(0,6000);
-	h0->GetXaxis()->SetTitle("Energy[MeV]");
+	h0->GetXaxis()->SetTitle("Energy [MeV]");
 	h0->GetXaxis()->CenterTitle();
 	h0->GetYaxis()->SetRangeUser(0,50);
 	h0->GetYaxis()->SetTitle("#nu_{e}CC Events / (40 kTon #upoint y #upoint 1.2 MW)");

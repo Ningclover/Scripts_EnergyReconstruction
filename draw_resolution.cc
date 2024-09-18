@@ -155,7 +155,7 @@ void draw_resolution(){
 	h_axis->GetXaxis()->CenterTitle();
 	h_axis->GetYaxis()->CenterTitle();
 	TCanvas *c1 = new TCanvas("c1","c1",800,600);
-	gPad->SetGrid();
+	//gPad->SetGrid();
 	int color[]={1,kGreen+2,4,2,6,5};
 	TGraph *g1 = new TGraph(10,E,res_Q3);	//Q3
 	TGraph *g2 = new TGraph(10,E,res_Q1); //Q1

@@ -4,7 +4,7 @@
 void Rf_Df()
 {
 //=========Macro generated from canvas: c2/c2
-//=========  (Thu Aug 29 16:10:32 2024) by ROOT version 6.28/06
+//=========  (Wed Sep  4 16:03:28 2024) by ROOT version 6.28/06
    TCanvas *c2 = new TCanvas("c2", "c2",56,65,800,600);
    gStyle->SetOptStat(0);
    gStyle->SetOptTitle(0);
@@ -1460,7 +1460,7 @@ void Rf_Df()
    tex->SetLineWidth(2);
    tex->Draw();
    
-   TLegend *leg = new TLegend(0.18,0.18,0.85,0.24,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.18,0.18,0.3575,0.24,NULL,"brNDC");
    leg->SetBorderSize(1);
    leg->SetTextFont(133);
    leg->SetLineColor(1);
@@ -1477,6 +1477,16 @@ void Rf_Df()
    entry->SetMarkerSize(1.3);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
+   leg->Draw();
+   
+   leg = new TLegend(0.3575,0.18,0.535,0.24,NULL,"brNDC");
+   leg->SetBorderSize(1);
+   leg->SetTextFont(133);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
    entry=leg->AddEntry("h_Q_had_m","Charge; h","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
@@ -1486,6 +1496,16 @@ void Rf_Df()
    entry->SetMarkerSize(1.5);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
+   leg->Draw();
+   
+   leg = new TLegend(0.535,0.18,0.6925,0.24,NULL,"brNDC");
+   leg->SetBorderSize(1);
+   leg->SetTextFont(133);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
    entry=leg->AddEntry("h_L_lep_m","Light; e","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
@@ -1495,6 +1515,16 @@ void Rf_Df()
    entry->SetMarkerSize(1.3);
    entry->SetTextFont(133);
    entry->SetTextSize(28);
+   leg->Draw();
+   
+   leg = new TLegend(0.6925,0.18,0.85,0.24,NULL,"brNDC");
+   leg->SetBorderSize(1);
+   leg->SetTextFont(133);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
    entry=leg->AddEntry("h_L_had_m","Light; h","P");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);

@@ -63,9 +63,9 @@ void plot_sensitivity(){
 	int color[] = {1,kGreen+2,4,6,2,4,5};
 	for(int i=0;i<5;i++){
 		if(i==3)continue;
-		g[i] = new TGraph(Form("./dat/dune_dcp_shape_%i.dat",i));
+		//g[i] = new TGraph(Form("./dat/dune_dcp_shape_%i.dat",i));
 		//g[i] = new TGraph(Form("dat/dune_dcp_1nd_%i.dat",i));
-		//g[i] = new TGraph(Form("dat/dune_dcp_2nd_%i.dat",i));
+		g[i] = new TGraph(Form("dat/dune_dcp_2nd_%i.dat",i));
 		//g[i] = new TGraph(Form("dune_dcp_%i.dat",i));
 		//g[i] = new TGraph(Form("dune_hie_%i.dat",i));
 		g[i] ->SetLineWidth(2);
@@ -77,7 +77,7 @@ void plot_sensitivity(){
 		double xx[4] = {3,3,3,3};
 		cout<<"ratio = "<<Get_percentage(g[i],par)<<endl;
 		TGraph *gg_tmp = new TGraph(4,par,xx);
-		gg_tmp->Draw("same *");
+		//gg_tmp->Draw("same *");
 		gg_tmp->SetMarkerSize(1);
 	}
 	//g[0]->GetYaxis()->SetRangeUser(10,35);
@@ -87,7 +87,7 @@ void plot_sensitivity(){
 	g[0]->GetYaxis()->SetTitle("#sqrt{#Delta #chi ^{2}}");
 	g[0]->GetXaxis()->CenterTitle();
 	g[0]->GetYaxis()->CenterTitle();
-	gPad->SetGrid();
+	//gPad->SetGrid();
 	TLegend *leg2 = new TLegend(0.3,0.72, 0.7,0.85);
 	leg2->SetNColumns(2);  
 	leg2->SetBorderSize(0);
@@ -98,8 +98,8 @@ void plot_sensitivity(){
 	//	leg2->AddEntry(g[5], "MicroBooNE", "l");
 	leg2->Draw();
 	//c1->SaveAs("plot/CP-sens-1st.pdf");
-	//c1->SaveAs("plot/CP-sens-2nd.pdf");
-	c1->SaveAs("plot/CP-sens-shape.pdf");
+	c1->SaveAs("plot/CP-sens-2nd.pdf");
+	//c1->SaveAs("plot/CP-sens-shape.pdf");
 }
 
 void plot_stage(){
